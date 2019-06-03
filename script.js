@@ -34,6 +34,7 @@ function createPlayer(nam, scor){
 		display: function(num){
 			this.score = num;
 			this.li.innerHTML = this.name+":     "+this.score;
+			this.li.score=this.score;
 		}
 			 
 	};
@@ -163,11 +164,10 @@ function draw(){
 		
 	
 	reqObj.display(score);
-	for(i=players.length-1; i>=0;i--)
-	{
-		if(players[i].score < score)
-			scoreboard.insertBefore(reqObj.li , players[i].li);	
-	}
+
+	for(i=scoreboard.childElementCount-1; i>=0;i--)
+		if(scoreboard.childNodes[i].score <=score)
+			scoreboard.insertBefore(reqObj.li , scoreboard.childNodes[i]);	
 	displayScore();
 	drawC(0,a);
 	drawC(1,a);
