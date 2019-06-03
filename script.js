@@ -241,6 +241,9 @@ document.addEventListener('keypress' , function(e){
 
 
 function Intro(){
+	rbtn.style.visibility="hidden";
+	pbtn.style.visibility="hidden";
+
 	ctx.clearRect(0,0,canvas.width,canvas.height);
 	ctx.fillStyle='#000000';
 	ctx.fillRect(0,0,canvas.width, canvas.height);
@@ -270,8 +273,6 @@ let pbtn=document.getElementById("pbtn");
 pbtn.addEventListener('click' , function(){
 	pause=true;
 });
-rbtn.style.visibility="hidden";
-pbtn.style.visibility="hidden";
 
 
 Intro();
